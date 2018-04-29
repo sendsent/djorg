@@ -1,0 +1,22 @@
+<h1> Bookmarks </h1>
+
+{% if bookmarks %}
+<ol>
+    {% for bookmark in bookmarks %}
+    <li><a href="{{ bookmark.url }}">{{ bookmark.name }}</a></li>
+</ol>
+{% else %}
+<p>No bookmarks available - you should add some!</p>
+{% endif %}
+
+<!--
+Making a simple template that shows the data
+It checks if we actually passed bookmarks in (if we had data related to bookmarks)
+If we do, then for each bookmark we make a link in a list and it goes to the bookmark url and has the text of the bookmark
+If there are no bookmarks then display message conveying no bookmarks
+
+How it should work:
+Requests to bookmarks should go to the bookmarks app
+Requests to bookmarks app should go to that index view
+The index view should show us our bookmarks
+-->
